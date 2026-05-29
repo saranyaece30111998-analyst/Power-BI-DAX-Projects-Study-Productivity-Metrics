@@ -1,4 +1,4 @@
-# Power BI DAX Formulas – Productivity & Study # 📊 Productivity & Study Dashboard Report (Power BI DAX Project)
+# 📊 Productivity & Study Dashboard Report 
 
 ## 1. Executive Summary
 This project leverages **Power BI DAX formulas** to analyze user productivity, screen time, study hours, and behavioral patterns.  
