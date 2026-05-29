@@ -82,24 +82,46 @@ Some of the core DAX formulas applied:
 - `Top Study Hours = TOPN(5, Users, Users[StudyHours], DESC)`
 - `Screen Time Rank = RANKX(ALL(Users), SUM(Users[ScreenTime]))`
 
+## 🧮 DAX Formulas (Sample)
+```DAX
+Average Productivity = AVERAGE('UserData'[Productivity])
+Total Productivity   = SUM('UserData'[Productivity])
 
-The dashboard panels include:
-- **KPIs**: Average productivity, total screen time, study hours, free time
-- **User Segmentation**: High vs. low productivity users
-- **Tables**: Ranked study hours, screen time, and free time
-- **Insights**: Sleep quality correlation with productivity
+High Productivity Users =
+CALCULATE(COUNTROWS('UserData'),
+FILTER('UserData','UserData'[Productivity] >= 50))
 
-## 📂 Dataset
-The dataset contains fields such as:
-- `User ID`
-- `Study Hours`
-- `Screen Time`
-- `Free Time`
-- `Active Time`
-- `Sleep Quality`
-- `Productivity Metrics`
+Low Productivity Users =
+CALCULATE(COUNTROWS('UserData'),
+FILTER('UserData','UserData'[Productivity] < 50))
 
-## 🚀 How to Use
-1. Clone this repository:
+Total Screen Time = SUM('UserData'[Screen Time])
+
+High Addiction Screen Time =
+CALCULATE(SUM('UserData'[Screen Time]),
+FILTER('UserData','UserData'[Screen Time] > 12))
+```
+  
+
+---
+
+## ✅ Conclusion
+This DAX-powered dashboard consolidates complex user behavior into **clear, actionable insights**.  
+It enables organizations to:  
+- Monitor **productivity trends**  
+- Identify **risk groups**  
+- Promote **healthier digital habits**  
+
+---
+
+### 📌 How to Use
+1. Clone the repository  
+2. Open the `.pbix` file in **Power BI Desktop**  
+3. Connect to your dataset  
+4. Explore the dashboard visuals and KPIs  
+
+---
+
+👉
    ```bash
    git clone https://github.com/your-username/dax-productivity-dashboard.git
